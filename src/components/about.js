@@ -30,7 +30,7 @@ export default function About(props){
     return(
     <div className="container-fluid">
         <div className="container py-3">
-            <h1>About Us</h1>
+            <h1 className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>About Us</h1>
         <div className="card my-3" style={{backgroundColor:props.mode ==='dark' ? 'grey':'white'}}>
             <div className="card-body">
                 <h5 className="card-title">Card title</h5>
