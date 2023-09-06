@@ -13,5 +13,11 @@ code {
 }
 
 .navbar-edit{
-  background-color: chartreuse;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#flexSwitchCheckDefault{
+  color: blue;
 }
