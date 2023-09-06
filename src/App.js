@@ -49,7 +49,7 @@ function App() {
 <Navbar title="TextUtils" about="About TextUtils" mode={mode} toggleMode={toggleMode} />
 <Alert alert={alert} />
       <Routes>
-        <Route path="/" element={ <Form/> } />
+        <Route path="/" element={ <Form mode={mode} showalert={showalert}/>} />
         <Route path="/about" element={ <About/> } />
   
       </Routes>

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 
 export default function Navbar(props) {
+
+  
   return (
     <nav className  = {`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
     <Link className = "navbar-brand" to="/">Navbar</Link>
@@ -10,19 +12,13 @@ export default function Navbar(props) {
       <span className = "navbar-toggler-icon"></span>
     </button>
   
-    <div className = "collapse navbar-collapse" id="navbarSupportedContent">
+    <div className = "collapse navbar-edit navbar-collapse" id="navbarSupportedContent" style={style-navbar}>
       <ul className = "navbar-nav mr-auto">
-        {/* <li className = "nav-item active">
-          <a className = "nav-link" href="#">{props.title} </a>
-        </li> */}
         <li className = "nav-item">
-          {/* <a className = "nav-link" href="#">{props.about}</a> */}
           <Link to="about" className = "nav-link">{props.about}</Link>
-
-        </li>
-    
-     
+        </li> 
       </ul>
+
       <form action="">
       <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
   <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>

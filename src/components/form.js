@@ -18,10 +18,29 @@ export default function Form(props) {
 
     }
 
+    
+    function copyfun() {
+      // Get the text field
+      var copyText = document.getElementById("mybox");
+      copyText.select();    
+      navigator.clipboard.writeText(copyText.value);
+      props.showalert("Text copied", "Success")
+
+    }
+
+    function extraspacefun(){
+      var newString = text.replace(/\s\s+/g,' '); // "thiscontainsspaces"
+      settext(newString);
+      if (text!=newString)
+      props.showalert("Extra space removed", "Success")
+
+
+    }
     const  clearfun= () =>{
       settext(" ")
          
       }
+    
 
       console.log(text)
 
@@ -29,10 +48,10 @@ export default function Form(props) {
         console.log("on change");
         settext(event.target.value)
     }
-
+    
 
     console.log(text)
-    
+     
    
     // here text is a state
     // text = "newtext"  wrong way of changing state
@@ -42,12 +61,14 @@ export default function Form(props) {
           <div className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}><h1 className='my-3 mt-5 text-center'>Enter text to analyze</h1></div>
 
         <div className="mb-3">      
-        <textarea className="form-control" onChange={handleonchange} value={text} id="exampleFormControlTextarea1" rows="6"></textarea>
+        <textarea className="form-control" id='mybox' onChange={handleonchange} value={text} rows="6"></textarea>
         </div>
         <button className='btn btn-primary' onClick={upperfun} >UpperCase</button>
         <button className='mx-2 btn btn-primary' onClick={lowerfun}>LowerCase</button>
+        <button className='mx-2 btn btn-primary' onClick={extraspacefun}>Remove Extra Space</button>
+        <button className='mx-2 btn btn-primary' onClick={copyfun}>Copy</button>
         <button className='mx-2 btn btn-primary' onClick={clearfun}>Clear</button>
-     
+
      <div className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>
         <h3 className='my-3'>Text Summary</h3>
         <p> Total words = {text.split(" ").length} </p>
