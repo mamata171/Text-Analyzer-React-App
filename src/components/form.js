@@ -63,15 +63,15 @@ export default function Form(props) {
         <div className="mb-3">      
         <textarea className="form-control" id='mybox' onChange={handleonchange} value={text} rows="6"></textarea>
         </div>
-        <button className='btn btn-primary' onClick={upperfun} >UpperCase</button>
-        <button className='mx-2 btn btn-primary' onClick={lowerfun}>LowerCase</button>
-        <button className='mx-2 btn btn-primary' onClick={extraspacefun}>Remove Extra Space</button>
-        <button className='mx-2 btn btn-primary' onClick={copyfun}>Copy</button>
-        <button className='mx-2 btn btn-primary' onClick={clearfun}>Clear</button>
+        <button className='btn my-1 btn-primary' onClick={upperfun} >UpperCase</button>
+        <button className='mx-2 my-1 btn btn-primary' onClick={lowerfun}>LowerCase</button>
+        <button className='mx-2 my-1 btn btn-primary' onClick={extraspacefun}>Remove Extra Space</button>
+        <button className='mx-2 my-1 btn btn-primary' onClick={copyfun}>Copy</button>
+        <button className='mx-2 my-1 btn btn-primary' onClick={clearfun}>Clear</button>
 
      <div className={`text-${props.mode === 'light' ? 'dark' : 'light'}`}>
         <h3 className='my-3'>Text Summary</h3>
-        <p> Total words = {text.split(" ").length} </p>
+        <p> Total words = {text.split(" ").filter((element)=>{ return element.length !==0}).length} </p>
         <p> Total characters = {text.length} </p>
         <p> {0.004*text.split(" ").length}min Average Reading Time </p>
 

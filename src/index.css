@@ -21,3 +21,15 @@ code {
 #flexSwitchCheckDefault{
   color: blue;
 }
+
+@media screen and (max-width:992px) {
+  nav{
+    display: flex !important;
+    padding: 10px;
+  }
+  
+
+}
+
+
+
